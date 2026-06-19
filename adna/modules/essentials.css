@@ -1,0 +1,262 @@
+/*------ESSENTIALS------*/
+
+/* Configure essentials layout: change --essentials-per-row to set items per row */
+:root {
+  --essentials-per-row: 3 !important;
+}
+
+.zen-essentials-container {
+  border-radius: 22px !important;
+  padding: 0 !important;
+  gap: 3px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.zen-essentials-container > tab {
+  flex: 1 1 calc((100% - 6px) / 3) !important;
+  min-width: 0 !important;
+  max-width: calc((100% - 6px) / 3) !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Bottom row items expand to fill when less than 3 */
+.zen-essentials-container > tab:nth-child(4) {
+  flex: 1 1 calc((100% - 3px) / 2) !important;
+  max-width: calc((100% - 3px) / 2) !important;
+}
+
+.zen-essentials-container > tab:nth-child(5) {
+  flex: 1 1 calc((100% - 3px) / 2) !important;
+  max-width: calc((100% - 3px) / 2) !important;
+}
+
+/* When selected, add glow */
+.zen-essentials-container > tab[selected] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+#zen-essentials {
+  min-width: 0 !important;
+  padding: 5px !important;
+  padding-top: 7px !important;
+}
+
+.tab-stack > vbox {
+  margin: 0 !important;
+}
+
+.zen-essentials-container tab .tab-stack .tab-background:is([selected]):before {
+  background: hsl(from var(--zen-primary-color) h 200% 90% / 0.25) !important;
+  margin: 0 !important;
+  border-radius: inherit !important;
+  filter: blur(12px) !important;
+}
+
+.zen-essentials-container tab .tab-stack .tab-background:after {
+  content: "" !important;
+  filter: blur(0) !important;
+  background-size: 0px 0px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: all 0.5s ease-out !important;
+  border-radius: inherit !important;
+}
+
+.zen-essentials-container
+  tab
+  .tab-stack
+  .tab-content:is([selected])
+  .tab-icon-image {
+  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.9));
+}
+
+.tab-content > tab {
+  max-width: 22px !important;
+  height: 23px !important;
+  overflow: visible !important;
+  .tab-stack {
+    .tab-background {
+      border: none !important;
+      border-radius: 0px 10px 0px 10px !important;
+    }
+    .tab-content {
+      padding: 0 !important;
+      height: fit-content !important;
+      padding: 4px !important;
+    }
+  }
+}
+
+tab[pending="true"] > .tab-stack > .tab-content {
+  opacity: 0.5 !important;
+}
+
+/*------PINNED EXTENSIONS------*/
+
+/* Fix customize toolbar view - keep container visible */
+:root[customizing] #TabsToolbar-customization-target {
+  visibility: visible !important;
+  display: flex !important;
+  flex-flow: row wrap !important;
+  gap: 3px !important;
+  min-height: 40px !important;
+}
+
+:root[customizing] #tabbrowser-tabs {
+  min-width: 100% !important;
+}
+
+/* Make extensions container flex with row wrap */
+#TabsToolbar-customization-target {
+  display: flex !important;
+  flex-flow: row wrap !important;
+  gap: calc(var(--zen-toolbox-padding) - 3px) !important;
+  padding: 4px 0 !important;
+}
+
+/* Force tabs to take full width so extensions wrap to their own row */
+#tabbrowser-tabs {
+  min-width: 100% !important;
+  height: calc(100% - 37px) !important;
+}
+
+#zen-tabs-wrapper {
+  max-height: 700px !important;
+}
+
+/* Add margin to nav-bar to prevent overlap */
+:root[zen-single-toolbar="true"] #nav-bar {
+  margin-bottom: 10px !important;
+}
+
+/* Style extension buttons */
+.unified-extensions-item {
+  margin-inline: 2px !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 0 !important;
+  height: 32px !important;
+  width: 32px !important;
+  flex-grow: 1 !important;
+  order: -1 !important;
+  background-color: var(--zen-toolbar-element-bg) !important;
+  box-shadow: 0 0 3px light-dark(rgb(255 255 255 / 0%), rgb(0 0 0 / 0%)) !important;
+  border-radius: 999px !important;
+  transition: background 0.1s ease-in-out !important;
+  outline: none !important;
+  -moz-appearance: none !important;
+}
+
+/* Remove badges */
+.toolbarbutton-badge {
+  display: none !important;
+}
+
+.toolbarbutton-badge-stack {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove borders from child elements */
+.unified-extensions-item > * {
+  border: none !important;
+  outline: none !important;
+}
+
+.unified-extensions-item:hover {
+  background-color: var(--toolbarbutton-hover-background) !important;
+  box-shadow: 0 0 3px light-dark(rgb(255 255 255 / 50%), rgb(0 0 0 / 50%)) !important;
+  outline: none !important;
+}
+
+.unified-extensions-item:active {
+  background-color: var(--toolbarbutton-active-background) !important;
+  outline: none !important;
+}
+
+.unified-extensions-item-action-button {
+  padding: 0 !important;
+  outline: none !important;
+  -moz-appearance: none !important;
+}
+
+.unified-extensions-item-action-button:hover,
+.unified-extensions-item-action-button:active {
+  background: transparent !important;
+  outline: none !important;
+}
+
+/* Style other toolbar buttons to match */
+> toolbarbutton:not([id="tabs-newtab-button"], #sort-button, #clear-button),
+> toolbaritem:not(#sort-button, #clear-button) {
+  height: 32px !important;
+  width: 32px !important;
+  flex-grow: 1 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  -moz-appearance: none !important;
+
+  toolbarbutton,
+  stack {
+    --toolbarbutton-active-background: transparent !important;
+    --toolbarbutton-hover-background: transparent !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+/* Remove borders from child elements */
+> toolbarbutton:not([id="tabs-newtab-button"]) > *,
+> toolbaritem > * {
+  border: none !important;
+  outline: none !important;
+}
+
+> toolbarbutton:not([id="tabs-newtab-button"]),
+> toolbaritem {
+  background-color: var(--zen-toolbar-element-bg) !important;
+  box-shadow: 0 0 3px light-dark(rgb(255 255 255 / 12%), rgb(0 0 0 / 12%)) !important;
+  border-radius: 999px !important;
+  margin: 0 !important;
+  order: -1 !important;
+  flex-grow: 1 !important;
+  border: none !important;
+  outline: none !important;
+  -moz-appearance: none !important;
+  transition: background 0.1s ease-in-out !important;
+}
+
+> toolbarbutton:not([id="tabs-newtab-button"]):hover,
+> toolbaritem:hover {
+  background-color: var(--toolbarbutton-hover-background) !important;
+  box-shadow: 0 0 3px light-dark(rgb(255 255 255 / 50%), rgb(0 0 0 / 50%)) !important;
+  outline: none !important;
+}
+
+> toolbarbutton:not([id="tabs-newtab-button"]):active,
+> toolbaritem:active {
+  background-color: var(--toolbarbutton-active-background) !important;
+  outline: none !important;
+}
+
+/* Collapsed sidebar variant */
+:root:not([zen-sidebar-expanded="true"], [zen-single-toolbar="true"])
+  #TabsToolbar-customization-target
+  .unified-extensions-item {
+  width: 24px !important;
+  height: 32px !important;
+  margin-inline: 6px !important;
+  margin-block: 2px !important;
+}

@@ -1,0 +1,28 @@
+/*------FOLDERS------*/
+
+zen-folder:not([collapsed], [has-active]) {
+  border-radius: 22px;
+  transition: opacity 0.3s ease;
+}
+
+zen-folder:not([collapsed]) .tab-group-container {
+  border: none !important;
+  padding-top: 4px !important;
+  margin-bottom: 4px !important;
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+  border-radius: 0 0 16px 16px !important;
+}
+
+/* Hide container when folder is collapsed */
+zen-folder[collapsed] .tab-group-container {
+  display: none !important;
+}
+
+zen-folder {
+  transition: all 0.3s ease-out !important;
+}
+
+zen-folder:not([collapsed]) .tab-group-label {
+  border-radius: 22px !important;
+}

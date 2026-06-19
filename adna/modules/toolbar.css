@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+:root {
+  --livs-bg: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  --livs-acc: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.17));
+}
+
+/*------GENERAL------*/
+
+* {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#navigator-toolbox {
+  padding: 4px 5px 4px 8px !important;
+}
+
+#statuspanel {
+  display: none !important;
+}
+
+.titlebar-buttonbox {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 6px !important;
+}
+
+.titlebar-button {
+  order: 0 !important;
+  transition: all 0.4s ease !important;
+  margin: 4px !important;
+  border-radius: 22px !important;
+  background-color: var(--livs-bg) !important;
+  padding: 0 !important;
+  height: 15px !important;
+  width: 15px !important;
+
+  &::before {
+    opacity: 0 !important;
+    scale: 0.7 !important;
+  }
+}
+
+.titlebar-button:hover {
+  width: 27px !important;
+}
+
+.titlebar-button:hover::before {
+  opacity: 0.5 !important;
+}
+
+.zen-workspaces-actions {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+arrowscrollbox:is([scrolledtoend], [scrolledtostart]):before {
+  opacity: 1 !important;
+}
+
+zen-workspace .workspace-arrowscrollbox:before {
+  content: "" !important;
+  height: 1px !important;
+  width: 100% !important;
+  transform: scale(0) !important;
+  transform-origin: center !important;
+  background: var(--livs-bg) !important;
+  transition: all 1s ease !important;
+  display: none !important;
+}
+
+zen-workspace[active="true"] .workspace-arrowscrollbox:before {
+  transform: scale(1) !important;
+}
+
+.workspace-arrowscrollbox {
+  mask-image: linear-gradient(to top, transparent 2%, black 15%) !important;
+}
+
+scrollbox {
+  scrollbar-width: none !important;
+}
+
+.zen-workspace-normal-tabs-section:after {
+  content: "" !important;
+  height: 60px !important;
+}
+
+.zen-current-workspace-indicator-name {
+  letter-spacing: 9px !important;
+  font-weight: 100 !important;
+  text-align: center !important;
+  transition: all 0.75s ease !important;
+}
+
+zen-workspace[active="true"] .zen-current-workspace-indicator-name {
+  letter-spacing: 0 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+}
+
+/*------COMPACT MODE------*/
+
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  padding: 5px !important;
+  #titlebar {
+    padding: 10px !important;
+    #zen-toolbar-background {
+      overflow: hidden !important;
+      border-radius: 5px 27px 27px 5px !important;
+      border: solid 1px var(--livs-bg) !important;
+      box-shadow: none !important;
+      &:after {
+        outline: none !important;
+      }
+      &:before {
+      }
+    }
+  }
+}
+
+/*------BORDERLESS------*/
+
+:root {
+  --zen-element-separation: 0px !important;
+  --zen-webview-border-radius: 0 !important;
+  #titlebar {
+    margin: 0px !important;
+  }
+}
+
+#zen-tabbox-wrapper {
+  margin: 0 !important;
+}
+
+.browserSidebarContainer {
+  box-shadow: none !important;
+}
+
+.browserStack {
+  border-left: solid 0px transparent !important;
+}
+
+:root:not([zen-compact-mode="true"]) .browserStack {
+  border-left: solid 1px rgba(255, 255, 255, 0.13) !important;
+}

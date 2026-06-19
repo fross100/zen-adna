@@ -1,0 +1,175 @@
+/*------SEARCHBAR------*/
+
+#zen-copy-url-button {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#identity-box,
+#zen-site-data-icon-button {
+  height: 100% !important;
+  visibility: visible !important;
+  opacity: 0.8 !important;
+}
+
+#main-window[zen-single-toolbar="true"] #identity-box,
+#zen-site-data-icon-button {
+  order: 0 !important;
+}
+
+#main-window[zen-single-toolbar="true"] #urlbar:not([open]) {
+  height: 45px !important;
+}
+
+.urlbar-container {
+  border-radius: 22px !important;
+}
+
+::placeholder {
+  text-align: left !important;
+}
+
+.urlbar-background {
+  border-radius: 22px !important;
+  width: 101% !important;
+  margin-left: -0.5% !important;
+}
+
+/* URL bar result rows - pill shape on hover/click */
+.urlbarView-row {
+  border-radius: 999px !important;
+  margin: 2px 8px !important;
+  padding: 0 !important;
+}
+.urlbarView-body-inner {
+  border: none !important;
+}
+.urlbarView-row:hover,
+.urlbarView-row[selected] {
+  border-radius: 999px !important;
+  background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+.urlbarView-favicon,
+.urlbarView-favicon:hover {
+  background: none !important;
+}
+
+.urlbarView-row-inner:hover,
+.urlbarView-row-inner[selected] {
+  background: none !important;
+}
+
+.urlbarView-action,
+.urlbarView-action-icon {
+  color: light-dark(#000, #fff) !important;
+  fill: light-dark(#000, #fff) !important;
+}
+
+.urlbarView-title,
+.urlbarView-url {
+  color: light-dark(#000, #fff) !important;
+}
+
+.urlbarView-title-separator,
+.urlbarView-title-separator::before {
+  color: light-dark(#000, #fff) !important;
+  fill: light-dark(#000, #fff) !important;
+}
+
+.urlbarView-favicon {
+  color: light-dark(#000, #fff) !important;
+  fill: light-dark(#000, #fff) !important;
+}
+
+.urlbar:not([focused]) {
+  text-align: center !important;
+}
+
+#main-window[zen-single-toolbar="true"] .urlbar:not([focused]) {
+  margin-top: 2px !important;
+}
+
+#urlbar[zen-floating-urlbar="true"] .urlbar-background {
+  box-shadow: 0 8px 32px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)) !important;
+  background: light-dark(white, black) !important;
+  border-radius: 32px !important;
+}
+
+#urlbar[zen-floating-urlbar="true"] .urlbarView {
+  background: light-dark(white, black) !important;
+  border-radius: 22px !important;
+  margin-bottom: 12px !important;
+  border: 1px solid light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1)) !important;
+}
+
+#urlbar[zen-floating-urlbar="true"] .urlbarView-row {
+  border-bottom: none !important;
+}
+
+#urlbar[zen-floating-urlbar="true"] .urlbarView-row::after {
+  display: none !important;
+}
+
+/*=== ctrl + T animation ===*/
+
+#urlbar[zen-newtab="true"][zen-floating-urlbar="true"] {
+  animation: urlbar-rise 0.15s ease-out forwards;
+}
+
+@keyframes urlbar-rise {
+  from {
+    translate: -50% -20px;
+    opacity: 0;
+  }
+  to {
+    translate: -50% 0;
+    opacity: 1;
+  }
+}
+
+.browserContainer,
+.browserStack {
+  transition: all 0.3s cubic-bezier(0, 0.5, 0, 1) !important;
+}
+
+#browser:has(#urlbar[zen-newtab="true"][zen-floating-urlbar="true"])
+  .browserStack {
+  transition: all 0.3s cubic-bezier(0, 0.5, 0, 1) !important;
+  overflow: hidden !important;
+  filter: light-dark(
+    brightness(90%) blur(16px) saturate(140%),
+    brightness(70%) blur(16px) saturate(140%)
+  ) !important;
+  opacity: 1 !important;
+}
+
+/*=== ctrl + L animation ===*/
+
+#browser:has(#urlbar[zen-floating-urlbar="true"]:not([zen-newtab="true"]))
+  .browserContainer {
+  overflow: hidden !important;
+  transform: scale(0.393, 0.32) !important;
+  .browserStack {
+    opacity: 0 !important;
+    filter: light-dark(
+      brightness(90%) blur(30px) saturate(140%),
+      brightness(70%) blur(30px) saturate(140%)
+    ) !important;
+  }
+}
+
+#urlbar[zen-floating-urlbar="true"]:not([zen-newtab="true"]) {
+  animation: urlbar-fadein 0.2s ease-out 0.1s both !important;
+}
+
+@keyframes urlbar-fadein {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
