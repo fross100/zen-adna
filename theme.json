@@ -2,12 +2,12 @@
   "id": "adna",
   "name": "Adna",
   "description": "A custom Zen Browser theme",
-  "homepage": "https://github.com/fross/zen-theme",
-  "readme": "https://raw.githubusercontent.com/fross/zen-theme/main/README.md",
+  "homepage": "https://github.com/fross100/zen-theme-adna",
+  "readme": "https://raw.githubusercontent.com/fross100/zen-theme-adna/main/README.md",
   "style": {
     "chrome": "userChrome.css"
   },
-  "author": "fross",
+  "author": "fross100",
   "version": "1.0.0",
   "tags": ["chrome", "zen"],
   "createdAt": "2026-06-19",
