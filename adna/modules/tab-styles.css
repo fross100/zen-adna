@@ -21,7 +21,7 @@ tab:active {
 .workspace-arrowscrollbox {
   .tabbrowser-tab {
     .tab-background {
-      border-radius: 22px !important;
+      border-radius: 999px !important;
     }
   }
 
@@ -63,19 +63,27 @@ tab:active {
 
   .tabbrowser-tab[selected]:hover .tab-close-button.close-icon {
     background: transparent !important;
-    border-radius: 50% !important;
+    border-radius: 999px !important;
     box-shadow:
       2px 2px 4px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.25)),
-      -2px -2px 4px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.08)) !important;
+      -2px -2px 4px
+        light-dark(
+          rgba(255, 255, 255, 0.6),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   }
 
   .tabbrowser-tab:hover .tab-close-button.close-icon {
     background: transparent !important;
-    border-radius: 50% !important;
+    border-radius: 999px !important;
     box-shadow:
       inset 2px 2px 4px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.25)),
-      inset -2px -2px 4px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.08)) !important;
+      inset -2px -2px 4px
+        light-dark(
+          rgba(255, 255, 255, 0.6),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   }
 
@@ -90,7 +98,11 @@ tab:active {
     background: transparent !important;
     box-shadow:
       3px 3px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)),
-      -3px -3px 6px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.06)) !important;
+      -3px -3px 6px
+        light-dark(
+          rgba(255, 255, 255, 0.5),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transform: scale(1.15) !important;
   }
 
@@ -103,19 +115,28 @@ tab:active {
   .tabbrowser-tab[pinned][selected]:hover .tab-reset-button,
   .tabbrowser-tab[pinned][visuallyselected]:hover .tab-reset-button {
     background: transparent !important;
-    border-radius: 50% !important;
+    border-radius: 999px !important;
     box-shadow:
       2px 2px 4px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.25)),
-      -2px -2px 4px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.08)) !important;
+      -2px -2px 4px
+        light-dark(
+          rgba(255, 255, 255, 0.6),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   }
 
-  .tabbrowser-tab[pinned]:not([selected], [visuallyselected]):hover .tab-reset-button {
+  .tabbrowser-tab[pinned]:not([selected], [visuallyselected]):hover
+    .tab-reset-button {
     background: transparent !important;
-    border-radius: 50% !important;
+    border-radius: 999px !important;
     box-shadow:
       inset 2px 2px 4px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.25)),
-      inset -2px -2px 4px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.08)) !important;
+      inset -2px -2px 4px
+        light-dark(
+          rgba(255, 255, 255, 0.6),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   }
 
@@ -128,7 +149,11 @@ tab:active {
     background: transparent !important;
     box-shadow:
       3px 3px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)),
-      -3px -3px 6px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.06)) !important;
+      -3px -3px 6px
+        light-dark(
+          rgba(255, 255, 255, 0.5),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transform: scale(1.15) !important;
   }
 
@@ -144,11 +169,25 @@ tab:active {
 
 .tabbrowser-tab[pinned][selected] {
   .tab-background {
-    background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-    clip-path: polygon(-3px 0, calc(100% + 3px) 0, 100% 100%, 0 100%);
+    background: light-dark(
+      color-mix(
+        in srgb,
+        var(--tab-color, var(--zen-primary-color)) 30%,
+        transparent
+      ),
+      color-mix(
+        in srgb,
+        var(--tab-color, var(--zen-primary-color)) 45%,
+        transparent
+      )
+    ) !important;
     box-shadow:
       inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      inset -6px -6px 12px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)) !important;
+      inset -6px -6px 12px
+        light-dark(
+          rgba(255, 255, 255, 0.5),
+          color-mix(in srgb, var(--base05) 12%, transparent)
+        ) !important;
     transform: scale(1.02) !important;
   }
 
@@ -158,11 +197,25 @@ tab:active {
 }
 
 .tabbrowser-tab[pinned][visuallyselected] .tab-background {
-  background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-  clip-path: polygon(-3px 0, calc(100% + 3px) 0, 100% 100%, 0 100%);
+  background: light-dark(
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-primary-color)) 30%,
+      transparent
+    ),
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-primary-color)) 45%,
+      transparent
+    )
+  ) !important;
   box-shadow:
-    inset 3px 3px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3)),
-    inset -3px -3px 6px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.06)) !important;
+    inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    inset -6px -6px 12px
+      light-dark(
+        rgba(255, 255, 255, 0.5),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
   transform: scale(1.02) !important;
 }
 
@@ -191,7 +244,7 @@ tab:active {
 
 :not(.zen-essentials-container) > tab {
   overflow: hidden;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
 }
 
 tab-group[split-view-group="true"] .tab-group-container {
@@ -204,7 +257,7 @@ tab-group[split-view-group="true"] .tab-group-container {
 .tabbrowser-tab {
   position: relative;
   overflow: hidden;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
 }
 
 :not(.zen-essentials-container) > tab .tab-background::before,
@@ -237,74 +290,118 @@ tab-group[split-view-group="true"] .tab-group-container {
   background: var(--zen-toolbar-bg) !important;
   box-shadow:
     4px 4px 8px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55)),
-    -4px -4px 8px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)) !important;
+    -4px -4px 8px
+      light-dark(
+        rgba(255, 255, 255, 0.4),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
 }
 
 :not(.zen-essentials-container) > tab[selected] .tab-background,
 :not(.zen-essentials-container) > tab[visuallyselected] .tab-background {
-  background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-  clip-path: polygon(-3px 0, calc(100% + 3px) 0, 100% 100%, 0 100%);
-    box-shadow:
-      inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      inset -6px -6px 12px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)) !important;
-    transform: scale(1.02) !important;
-  }
+  background: color-mix(
+    in srgb,
+    var(--tab-color, var(--zen-primary-color)) 15%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    inset -6px -6px 12px
+      light-dark(
+        rgba(255, 255, 255, 0.5),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
+  transform: scale(1.02) !important;
+}
 
 :not(.zen-essentials-container) > tab[selected] .tab-background::before,
 :not(.zen-essentials-container) > tab[visuallyselected] .tab-background::before,
 .zen-essentials-container > tab[selected] > .tab-stack > .tab-background::after,
-.zen-essentials-container > tab[visuallyselected] > .tab-stack > .tab-background::after {
+.zen-essentials-container
+  > tab[visuallyselected]
+  > .tab-stack
+  > .tab-background::after {
   opacity: 0 !important;
   display: none !important;
 }
 
 :not(.zen-essentials-container) > tab[selected]:hover .tab-background,
 :not(.zen-essentials-container) > tab[visuallyselected]:hover .tab-background {
-  background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-    box-shadow:
-      inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      inset -6px -6px 12px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)) !important;
+  background: color-mix(
+    in srgb,
+    var(--tab-color, var(--zen-primary-color)) 15%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    inset -6px -6px 12px
+      light-dark(
+        rgba(255, 255, 255, 0.5),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
   transform: scale(1.02) !important;
 }
 
-/* Essential tabs always use outward emboss like hover */
+/* ESSENSIAL TAB BACKGROUND */
 .zen-essentials-container > tab .tab-background {
   background: var(--zen-toolbar-bg) !important;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
   box-shadow:
     4px 4px 8px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55)),
-    -4px -4px 8px light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)) !important;
+    -4px -4px 8px
+      light-dark(
+        rgba(255, 255, 255, 0.4),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .zen-essentials-container > tab[selected] .tab-background,
 .zen-essentials-container > tab[visuallyselected] .tab-background {
-  background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-  clip-path: none !important;
-    box-shadow:
-      inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      inset -6px -6px 12px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)) !important;
+  background: color-mix(
+    in srgb,
+    var(--tab-color, var(--zen-primary-color)) 15%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    inset -6px -6px 12px
+      light-dark(
+        rgba(255, 255, 255, 0.5),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
   transform: scale(1.02) !important;
 }
 
 .zen-essentials-container > tab[selected]:hover .tab-background,
 .zen-essentials-container > tab[visuallyselected]:hover .tab-background {
-  background: color-mix(in srgb, var(--tab-color, var(--zen-primary-color)) 15%, transparent) !important;
-  clip-path: none !important;
-    box-shadow:
-      inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      inset -6px -6px 12px light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)) !important;
+  background: color-mix(
+    in srgb,
+    var(--tab-color, var(--zen-primary-color)) 15%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    inset -6px -6px 12px
+      light-dark(
+        rgba(255, 255, 255, 0.5),
+        color-mix(in srgb, var(--base05) 12%, transparent)
+      ) !important;
   transform: scale(1.02) !important;
 }
 
 :not(.zen-essentials-container) > tab:active .tab-background::before,
 .zen-essentials-container > tab:active .tab-background::before {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 @keyframes tab-hover-gradient {
-  from { background-position: 0% 50%; }
-  to { background-position: 200% 50%; }
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
 }
 
 /*------CONTAINER TAB DOT------*/
@@ -312,7 +409,7 @@ tab-group[split-view-group="true"] .tab-group-container {
 .tabbrowser-tab[usercontextid] .tab-context-line {
   width: 8px !important;
   height: 8px !important;
-  border-radius: 50% !important;
+  border-radius: 999px !important;
   background: var(--identity-tab-color) !important;
   position: absolute !important;
   top: 50% !important;

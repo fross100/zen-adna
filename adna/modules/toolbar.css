@@ -15,7 +15,11 @@
 
 #navigator-toolbox {
   padding: 4px 5px 4px 8px !important;
-  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 8%,
+    var(--toolbar-bgcolor, var(--zen-toolbar-bg))
+  ) !important;
 }
 
 #navigator-toolbox,
@@ -27,7 +31,11 @@
 #zen-sidebar-top-buttons,
 #zen-sidebar-foot-buttons,
 #zen-toolbar-background {
-  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 8%,
+    var(--toolbar-bgcolor, var(--zen-toolbar-bg))
+  ) !important;
 }
 
 #zen-sidebar-splitter,
@@ -37,7 +45,11 @@ zen-sidebar-splitter {
   padding: 0 4px !important;
   margin-inline: -4px !important;
   border: none !important;
-  background: color-mix(in srgb, var(--zen-primary-color) 1%, transparent) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 1%,
+    transparent
+  ) !important;
   background-clip: content-box !important;
 }
 
@@ -56,7 +68,7 @@ zen-sidebar-splitter {
   order: 0 !important;
   transition: all 0.4s ease !important;
   margin: 4px !important;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
   background-color: var(--livs-bg) !important;
   padding: 0 !important;
   height: 15px !important;
@@ -130,11 +142,19 @@ zen-workspace[active="true"] .zen-current-workspace-indicator-name {
 /*------TOOLBAR BUTTONS------*/
 
 #zen-workspace-empty-space {
-  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 8%,
+    var(--toolbar-bgcolor, var(--zen-toolbar-bg))
+  ) !important;
 }
 
 tabbrowser-arrowscrollbox-periphery::after {
-  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 8%,
+    var(--toolbar-bgcolor, var(--zen-toolbar-bg))
+  ) !important;
 }
 
 toolbarbutton:not(#tabs-newtab-button):hover {

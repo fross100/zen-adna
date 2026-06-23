@@ -5,13 +5,17 @@
   gap: 0 !important;
   transform: scale(0.7) !important;
   border: none !important;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
   padding: 3px !important;
   container-type: initial !important;
   width: auto !important;
   display: flex !important;
   align-items: center !important;
-  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, #38384d)) !important;
+  background: color-mix(
+    in srgb,
+    var(--zen-primary-color) 8%,
+    var(--toolbar-bgcolor, #38384d)
+  ) !important;
   transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 
   &:hover {
@@ -25,7 +29,7 @@
     left: 3px !important;
     width: 30px !important;
     height: calc(100% - 6px) !important;
-    border-radius: 20px !important;
+    border-radius: 999px !important;
     background: var(--livs-acc) !important;
     pointer-events: none !important;
     z-index: 0 !important;
@@ -71,7 +75,7 @@
     position: static !important;
     z-index: 1 !important;
     transition: all 0.1s ease !important;
-    border-radius: 22px !important;
+    border-radius: 999px !important;
     background: transparent !important;
 
     &[active="true"] {
@@ -101,7 +105,7 @@
       content: "" !important;
       width: 5px !important;
       height: 5px !important;
-      border-radius: 22px !important;
+      border-radius: 999px !important;
       background-color: var(--livs-acc) !important;
     }
   }

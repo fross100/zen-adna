@@ -22,7 +22,7 @@
   will-change: flex, width, transform !important;
   box-sizing: border-box !important;
   overflow: visible !important;
-  border-radius: 22px !important;
+  border-radius: 999px !important;
   animation: slideBounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
