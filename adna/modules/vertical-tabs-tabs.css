@@ -1,0 +1,137 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/* ==========================================================================
+Tab Reset, Close, and Pin Buttons
+========================================================================== */
+
+.tab-reset-button,
+.tab-reset-pin-button,
+.tab-close-button {
+  display: none;
+  -moz-context-properties: fill, fill-opacity;
+  border-radius: var(--tab-border-radius);
+  color: inherit;
+  fill: currentColor;
+  padding: var(--tab-close-button-padding);
+  width: var(--size-item-medium);
+  height: var(--size-item-medium);
+  outline: none !important;
+}
+
+.tab-reset-pin-button {
+  display: flex;
+  position: relative;
+  height: calc(100% - var(--tab-block-margin) * 2);
+  margin-left: calc(-1 * var(--tab-inline-padding) + var(--tab-block-margin));
+  margin-right: 8px;
+  padding: 0 calc(var(--toolbarbutton-padding-inner) - 2px) 0 calc(var(--toolbarbutton-padding-inner) / 3 + var(--tab-inline-padding) - 2px);
+  border-radius: 0;
+  border-top-left-radius: var(--border-radius-medium);
+  width: unset;
+  border-bottom-left-radius: var(--border-radius-medium);
+  align-items: center;
+  justify-content: center;
+
+  & > image {
+    list-style-image: var(--zen-original-tab-icon);
+    width: var(--size-item-small);
+    height: var(--size-item-small);
+    pointer-events: none;
+    border-radius: 4px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 2.5px;
+    height: var(--size-item-small);
+    background: light-dark(rgba(66, 61, 61, 0.3), rgba(255, 255, 255, 0.3));
+    position: absolute;
+    right: 0;
+    top: 50%;
+    border-radius: 2px;
+    transform: rotate(15deg) translateY(-50%);
+  }
+
+  &:hover::after {
+    opacity: 0;
+  }
+}
+
+.reset-icon,
+.tab-reset-pin-button {
+  appearance: none;
+}
+
+@media not (forced-colors) {
+  .tab-reset-button:hover,
+  .tab-reset-pin-button:hover {
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
+  }
+
+  .tab-reset-button:hover:active,
+  .tab-reset-pin-button:hover:active {
+    background-color: color-mix(in srgb, currentColor 20%, transparent);
+  }
+}
+
+.tab-reset-button > .button-icon,
+.tab-reset-button > .button-box > .button-icon,
+.tab-reset-button > .toolbarbutton-icon,
+.tab-reset-pin-button > .button-icon,
+.tab-reset-pin-button > .button-box > .button-icon,
+.tab-reset-pin-button > .toolbarbutton-icon {
+  margin: 0;
+}
+
+.tab-reset-button > .button-box > .button-text,
+.tab-reset-button > .toolbarbutton-text,
+.tab-reset-pin-button > .button-box > .button-text,
+.tab-reset-pin-button > .toolbarbutton-text {
+  display: none;
+}
+
+:root[customizing] #TabsToolbar > *,
+:root[customizing] #TabsToolbar-customization-target {
+  min-width: unset !important;
+}
+
+/* ==========================================================================
+Tab Behavior and States
+========================================================================== */
+
+#tabbrowser-tabs {
+  & .tabbrowser-tab {
+    &[pinned]:not([pending="true"]:not([folder-active="true"])) .tab-close-button {
+      display: none !important;
+    }
+
+    &[pinned]:is(:not([pending="true"]), [folder-active="true"]):not([zen-essential]) {
+      &:hover .tab-reset-button,
+      &[visuallyselected] .tab-reset-button {
+        display: block;
+      }
+    }
+
+    &:not([zen-pinned-changed="true"]) .tab-reset-pin-button {
+      display: none;
+    }
+
+    &[zen-essential] .tab-reset-button,
+    &[zen-essential] .tab-reset-pin-button {
+      display: none;
+    }
+
+    &:not([pinned][visuallyselected]) .tab-reset-button {
+      display: none;
+    }
+
+    &[selected] .tab-background {
+      border-color: transparent;
+    }
+  }
+}

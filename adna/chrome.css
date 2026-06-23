@@ -6,3 +6,11 @@
 @import url("./modules/tab-folders.css");
 @import url("./modules/workspace-buttons.css");
 @import url("./modules/player.css");
+@import url("./modules/vertical-tabs-base.css");
+@import url("./modules/vertical-tabs-toolbar.css");
+@import url("./modules/vertical-tabs-tabs.css");
+@import url("./modules/vertical-tabs-workspaces.css");
+@import url("./modules/vertical-tabs-essentials.css");
+@import url("./modules/vertical-tabs-drag-drop.css");
+@import url("./modules/vertical-tabs-renaming.css");
+@import url("./modules/vertical-tabs-animations.css");

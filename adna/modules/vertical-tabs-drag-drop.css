@@ -1,0 +1,76 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/* ==========================================================================
+Drag and Drop Styles
+========================================================================== */
+
+#zen-drag-indicator {
+  --zen-drag-indicator-height: 2px;
+  --zen-drag-indicator-bg: color-mix(in srgb, var(--zen-primary-color) 50%, light-dark(rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.95)) 50%);
+
+  position: fixed;
+  z-index: 1000;
+  background: var(--zen-drag-indicator-bg);
+  pointer-events: none;
+  border-radius: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: calc(2 * var(--zen-drag-indicator-height));
+    width: calc(2 * var(--zen-drag-indicator-height));
+    border: var(--zen-drag-indicator-height) solid var(--zen-drag-indicator-bg);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  &[orientation="horizontal"] {
+    left: calc(var(--indicator-left) + 2 * var(--zen-drag-indicator-height) + 4px);
+    width: calc(var(--indicator-width) - 2 * var(--zen-drag-indicator-height) - 4px);
+    height: var(--zen-drag-indicator-height);
+    transition:
+      top 0.05s ease-out,
+      left 0.05s ease-out,
+      width 0.05s ease-out;
+
+    &::before {
+      left: calc(-2 * var(--zen-drag-indicator-height));
+      top: 50%;
+      transform: translate(calc(-1 * var(--zen-drag-indicator-height)), -50%);
+    }
+  }
+
+  &[orientation="vertical"] {
+    top: calc(var(--indicator-top) + 2 * var(--zen-drag-indicator-height) + 4px);
+    height: calc(var(--indicator-height) - 2 * var(--zen-drag-indicator-height) - 4px);
+    width: var(--zen-drag-indicator-height);
+    transition:
+      top 0.1s ease-out,
+      left 0.1s ease-out,
+      height 0.1s ease-out;
+
+    &::before {
+      top: calc(-2 * var(--zen-drag-indicator-height));
+      left: 50%;
+      transform: translate(-50%, calc(-1 * var(--zen-drag-indicator-height)));
+    }
+  }
+}
+
+#zen-dragover-background {
+  position: absolute;
+  z-index: -1;
+  /* Extra width to cover the sidebar splitter */
+  width: calc(100% + var(--zen-toolbox-padding));
+  left: 0;
+  pointer-events: none;
+  background: var(--zen-primary-color);
+
+  :root[zen-right-side="true"] & {
+    left: calc(-1 * var(--zen-toolbox-padding));
+  }
+}
