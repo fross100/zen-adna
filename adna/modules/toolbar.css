@@ -15,6 +15,30 @@
 
 #navigator-toolbox {
   padding: 4px 5px 4px 8px !important;
+  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+}
+
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar,
+#toolbar-menubar,
+#nav-bar,
+#PersonalToolbar,
+#zen-sidebar-top-buttons,
+#zen-sidebar-foot-buttons,
+#zen-toolbar-background {
+  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+}
+
+#zen-sidebar-splitter,
+zen-sidebar-splitter {
+  width: 1px !important;
+  min-width: 1px !important;
+  padding: 0 4px !important;
+  margin-inline: -4px !important;
+  border: none !important;
+  background: color-mix(in srgb, var(--zen-primary-color) 1%, transparent) !important;
+  background-clip: content-box !important;
 }
 
 #statuspanel {
@@ -101,6 +125,25 @@ zen-workspace[active="true"] .zen-current-workspace-indicator-name {
   font-weight: 600 !important;
   font-size: 14px !important;
   text-align: center !important;
+}
+
+/*------TOOLBAR BUTTONS------*/
+
+#zen-workspace-empty-space {
+  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+}
+
+tabbrowser-arrowscrollbox-periphery::after {
+  background: color-mix(in srgb, var(--zen-primary-color) 8%, var(--toolbar-bgcolor, var(--zen-toolbar-bg))) !important;
+}
+
+toolbarbutton:not(#tabs-newtab-button):hover {
+  background-color: var(--toolbarbutton-hover-background) !important;
+  border-radius: 999px !important;
+}
+
+toolbarbutton:not(#tabs-newtab-button):hover > * {
+  background-color: transparent !important;
 }
 
 /*------COMPACT MODE------*/

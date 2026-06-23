@@ -5,12 +5,11 @@ zen-folder:not([collapsed], [has-active]) {
   transition: opacity 0.3s ease;
 }
 
-zen-folder:not([collapsed]) .tab-group-container {
+.tab-group-container {
   border: none !important;
   padding-top: 4px !important;
   margin-bottom: 4px !important;
-  margin-right: 10px !important;
-  margin-left: 10px !important;
+  margin-inline: 36px 10px !important;
   border-radius: 0 0 16px 16px !important;
 }
 
@@ -23,6 +22,36 @@ zen-folder {
   transition: all 0.3s ease-out !important;
 }
 
-zen-folder:not([collapsed]) .tab-group-label {
-  border-radius: 22px !important;
+.tab-group-label-container:not(pinned):not(.zen-drop-target) {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.tab-group-label-container:not(pinned):not(.zen-drop-target) .tab-group-label {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 2px 12px 2px 12px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  font-size: 11px !important;
+  overflow: visible !important;
+  border-radius: 999px !important;
+  text-align: center !important;
+}
+
+.tab-group-label-container:not(pinned):not(.zen-drop-target) .tab-group-label::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 100% !important;
+  right: auto !important;
+  width: 999px !important;
+  height: 1.5px !important;
+  background: var(--tab-group-color, currentColor) !important;
+  opacity: 0.3 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
 }

@@ -6,39 +6,31 @@
 }
 
 .zen-essentials-container {
-  border-radius: 22px !important;
-  padding: 0 !important;
-  gap: 3px !important;
+  padding: 6px !important;
+  column-gap: 4px !important;
+  row-gap: 4px !important;
   min-width: 0 !important;
   width: 100% !important;
-  overflow: hidden !important;
   display: flex !important;
   flex-wrap: wrap !important;
 }
 
 .zen-essentials-container > tab {
-  flex: 1 1 calc((100% - 6px) / 3) !important;
+  flex: 1 1 calc((100% - 8px) / 3) !important;
   min-width: 0 !important;
-  max-width: calc((100% - 6px) / 3) !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: flex, width, transform !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
+  overflow: visible !important;
+  border-radius: 22px !important;
+  animation: slideBounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
-/* Bottom row items expand to fill when less than 3 */
-.zen-essentials-container > tab:nth-child(4) {
-  flex: 1 1 calc((100% - 3px) / 2) !important;
-  max-width: calc((100% - 3px) / 2) !important;
-}
-
-.zen-essentials-container > tab:nth-child(5) {
-  flex: 1 1 calc((100% - 3px) / 2) !important;
-  max-width: calc((100% - 3px) / 2) !important;
-}
+/* Bottom row items expand to fill automatically via flex-grow */
 
 /* When selected, add glow */
 .zen-essentials-container > tab[selected] {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: transparent !important;
 }
 
 #zen-essentials {
@@ -52,10 +44,20 @@
 }
 
 .zen-essentials-container tab .tab-stack .tab-background:is([selected]):before {
-  background: hsl(from var(--zen-primary-color) h 200% 90% / 0.25) !important;
+  background: linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--zen-primary-color) 5%, black),
+    color-mix(in srgb, var(--zen-primary-color) 30%, black),
+    color-mix(in srgb, var(--zen-primary-color) 75%, black),
+    color-mix(in srgb, var(--zen-primary-color) 100%, black),
+    color-mix(in srgb, var(--zen-primary-color) 50%, black),
+    color-mix(in srgb, var(--zen-primary-color) 15%, black)
+  ) !important;
+  background-size: 200% 200% !important;
+  animation: tab-hover-gradient 3.5s linear infinite !important;
   margin: 0 !important;
   border-radius: inherit !important;
-  filter: blur(12px) !important;
+  filter: blur(2px) !important;
 }
 
 .zen-essentials-container tab .tab-stack .tab-background:after {
