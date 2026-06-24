@@ -1,27 +1,33 @@
 :root {
-  /* === Core accent source ===
-     Priority: Omarchy accent (--base08) > Omarchy background > Zen editor.
-     The Omarchy hook sets --zen-colors-primary to --base00 (background),
-     so we pull --base08 first to get the actual accent colour. */
-  --adna-accent: var(--base08, var(--zen-colors-primary, var(--zen-primary-color, #808080)));
+  /* === Base background source ===
+     --base00 is the Omarchy background; --zen-primary-color is
+     from the Zen theme editor.  When neither is set we fall
+     back to a neutral #808080 so the theme always has a colour
+     to work with. */
+  --adna-base: var(--base00, var(--zen-primary-color, #808080));
 
-  /* === Surface tints === */
+  /* === Accent source ===
+     --base08 is the Omarchy highlight colour; when absent we
+     fall through to the same chain as --adna-base. */
+  --adna-accent: var(--base08, var(--adna-base));
+
+  /* === Surface tints (derived from --adna-base) === */
   --adna-bg: light-dark(
-    color-mix(in srgb, var(--adna-accent) 8%, white),
-    color-mix(in srgb, var(--adna-accent) 8%, black)
+    color-mix(in srgb, var(--adna-base) 8%, white),
+    color-mix(in srgb, var(--adna-base) 8%, black)
   );
   --adna-bg-hover: light-dark(
-    color-mix(in srgb, var(--adna-accent) 12%, white),
-    color-mix(in srgb, var(--adna-accent) 12%, black)
+    color-mix(in srgb, var(--adna-base) 12%, white),
+    color-mix(in srgb, var(--adna-base) 12%, black)
   );
   --adna-bg-splitter: light-dark(
-    color-mix(in srgb, var(--adna-accent) 1%, transparent),
-    color-mix(in srgb, var(--adna-accent) 1%, transparent)
+    color-mix(in srgb, var(--adna-base) 1%, transparent),
+    color-mix(in srgb, var(--adna-base) 1%, transparent)
   );
 
-  /* === Tab surfaces ===
-     --tab-color is set per-tab via Container Tab or Workspace colour.
-     When absent it falls back to --adna-accent. */
+  /* === Tab surfaces (derived from --adna-accent) ===
+     --tab-color is set per-tab via Container Tab or Workspace
+     colour; when absent it falls back to --adna-accent. */
   --adna-tab-selected: light-dark(
     color-mix(in srgb, var(--tab-color, var(--adna-accent)) 15%, transparent),
     color-mix(in srgb, var(--tab-color, var(--adna-accent)) 15%, transparent)
@@ -32,9 +38,7 @@
   );
 
   /* === Emboss shadow colours ===
-     Dark side = black shadow, Light side = white / tinted highlight.
-     --base05 is the base16 default-text colour from Omarchy;
-     --adna-accent is the fallback when Omarchy is absent. */
+     Dark side = black shadow, Light side = white / tinted highlight. */
   --adna-shadow-dark: light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55));
   --adna-shadow-light: light-dark(
     rgba(255, 255, 255, 0.4),
@@ -46,7 +50,7 @@
     color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
   );
 
-  /* === Hover gradient (animated) === */
+  /* === Hover gradient (animated, derived from --adna-accent) === */
   --adna-gradient: linear-gradient(
     45deg,
     light-dark(color-mix(in srgb, var(--adna-accent) 5%, white), color-mix(in srgb, var(--adna-accent) 5%, black)),
