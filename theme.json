@@ -5,11 +5,13 @@
   "homepage": "https://github.com/fross100/zen-adna",
   "readme": "https://raw.githubusercontent.com/fross100/zen-adna/main/README.md",
   "style": {
-    "chrome": "userChrome.css"
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
   },
   "author": "fross100",
   "version": "1.0.1",
   "tags": ["chrome", "zen"],
-  "createdAt": "2026-06-19",
+  "createdAt": "2025-06-19",
+  "updatedAt": "2025-06-24",
   "fork": ["zen"]
 }
