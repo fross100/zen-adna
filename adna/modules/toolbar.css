@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
 
-:root {
-  --livs-bg: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-  --livs-acc: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.17));
-}
-
 /*------GENERAL------*/
 
 * {
@@ -15,10 +10,7 @@
 
 #navigator-toolbox {
   padding: 4px 5px 4px 8px !important;
-  background: light-dark(
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, white),
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, black)
-  ) !important;
+  background: var(--adna-bg) !important;
 }
 
 #navigator-toolbox,
@@ -30,10 +22,7 @@
 #zen-sidebar-top-buttons,
 #zen-sidebar-foot-buttons,
 #zen-toolbar-background {
-  background: light-dark(
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, white),
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, black)
-  ) !important;
+  background: var(--adna-bg) !important;
 }
 
 #zen-sidebar-splitter,
@@ -43,10 +32,7 @@ zen-sidebar-splitter {
   padding: 0 4px !important;
   margin-inline: -4px !important;
   border: none !important;
-  background: light-dark(
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 1%, transparent),
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 1%, transparent)
-  ) !important;
+  background: var(--adna-bg-splitter) !important;
   background-clip: content-box !important;
 }
 
@@ -139,17 +125,11 @@ zen-workspace[active="true"] .zen-current-workspace-indicator-name {
 /*------TOOLBAR BUTTONS------*/
 
 #zen-workspace-empty-space {
-  background: light-dark(
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, white),
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, black)
-  ) !important;
+  background: var(--adna-bg) !important;
 }
 
 tabbrowser-arrowscrollbox-periphery::after {
-  background: light-dark(
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, white),
-    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, black)
-  ) !important;
+  background: var(--adna-bg) !important;
 }
 
 toolbarbutton:not(#tabs-newtab-button):hover {

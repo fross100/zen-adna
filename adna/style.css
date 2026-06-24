@@ -1,0 +1,63 @@
+:root {
+  /* === Core accent source ===
+     Omarchy sets --zen-colors-primary via thpm-zen-userChrome.css;
+     Zen theme editor sets --zen-primary-color.
+     This variable chains them so the theme responds to both. */
+  --adna-accent: var(--zen-colors-primary, var(--zen-primary-color));
+
+  /* === Surface tints === */
+  --adna-bg: light-dark(
+    color-mix(in srgb, var(--adna-accent) 8%, white),
+    color-mix(in srgb, var(--adna-accent) 8%, black)
+  );
+  --adna-bg-hover: light-dark(
+    color-mix(in srgb, var(--adna-accent) 12%, white),
+    color-mix(in srgb, var(--adna-accent) 12%, black)
+  );
+  --adna-bg-splitter: light-dark(
+    color-mix(in srgb, var(--adna-accent) 1%, transparent),
+    color-mix(in srgb, var(--adna-accent) 1%, transparent)
+  );
+
+  /* === Tab surfaces ===
+     --tab-color is set per-tab via Container Tab or Workspace colour.
+     When absent it falls back to --adna-accent. */
+  --adna-tab-selected: light-dark(
+    color-mix(in srgb, var(--tab-color, var(--adna-accent)) 15%, transparent),
+    color-mix(in srgb, var(--tab-color, var(--adna-accent)) 15%, transparent)
+  );
+  --adna-tab-pinned-selected: light-dark(
+    color-mix(in srgb, var(--tab-color, var(--adna-accent)) 30%, transparent),
+    color-mix(in srgb, var(--tab-color, var(--adna-accent)) 45%, transparent)
+  );
+
+  /* === Emboss shadow colours ===
+     Dark side = black shadow, Light side = white / tinted highlight.
+     --base05 is the base16 default-text colour from Omarchy;
+     --adna-accent is the fallback when Omarchy is absent. */
+  --adna-shadow-dark: light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55));
+  --adna-shadow-light: light-dark(
+    rgba(255, 255, 255, 0.4),
+    color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
+  );
+  --adna-shadow-in-dark: light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+  --adna-shadow-in-light: light-dark(
+    rgba(255, 255, 255, 0.5),
+    color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
+  );
+
+  /* === Hover gradient (animated) === */
+  --adna-gradient: linear-gradient(
+    45deg,
+    light-dark(color-mix(in srgb, var(--adna-accent) 5%, white), color-mix(in srgb, var(--adna-accent) 5%, black)),
+    light-dark(color-mix(in srgb, var(--adna-accent) 30%, white), color-mix(in srgb, var(--adna-accent) 30%, black)),
+    light-dark(color-mix(in srgb, var(--adna-accent) 75%, white), color-mix(in srgb, var(--adna-accent) 75%, black)),
+    light-dark(color-mix(in srgb, var(--adna-accent) 100%, white), color-mix(in srgb, var(--adna-accent) 100%, black)),
+    light-dark(color-mix(in srgb, var(--adna-accent) 50%, white), color-mix(in srgb, var(--adna-accent) 50%, black)),
+    light-dark(color-mix(in srgb, var(--adna-accent) 15%, white), color-mix(in srgb, var(--adna-accent) 15%, black))
+  );
+
+  /* === Legacy helper vars (keep for compatibility) === */
+  --livs-bg: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  --livs-acc: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.17));
+}

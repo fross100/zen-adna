@@ -44,15 +44,7 @@
 }
 
 .zen-essentials-container tab .tab-stack .tab-background:is([selected]):before {
-  background: linear-gradient(
-    45deg,
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 5%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 5%, black)),
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 30%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 30%, black)),
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 75%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 75%, black)),
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 100%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 100%, black)),
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 50%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 50%, black)),
-    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 15%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 15%, black))
-  ) !important;
+  background: var(--adna-gradient) !important;
   background-size: 200% 200% !important;
   animation: tab-hover-gradient 3.5s linear infinite !important;
   margin: 0 !important;
