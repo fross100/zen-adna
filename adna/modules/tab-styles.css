@@ -172,12 +172,12 @@ tab:active {
     background: light-dark(
       color-mix(
         in srgb,
-        var(--tab-color, var(--zen-primary-color)) 30%,
+        var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 30%,
         transparent
       ),
       color-mix(
         in srgb,
-        var(--tab-color, var(--zen-primary-color)) 45%,
+        var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 45%,
         transparent
       )
     ) !important;
@@ -200,12 +200,12 @@ tab:active {
   background: light-dark(
     color-mix(
       in srgb,
-      var(--tab-color, var(--zen-primary-color)) 30%,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 30%,
       transparent
     ),
     color-mix(
       in srgb,
-      var(--tab-color, var(--zen-primary-color)) 45%,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 45%,
       transparent
     )
   ) !important;
@@ -267,12 +267,12 @@ tab-group[split-view-group="true"] .tab-group-container {
   inset: 0;
   background: linear-gradient(
     45deg,
-    color-mix(in srgb, var(--zen-primary-color) 5%, black),
-    color-mix(in srgb, var(--zen-primary-color) 30%, black),
-    color-mix(in srgb, var(--zen-primary-color) 75%, black),
-    color-mix(in srgb, var(--zen-primary-color) 100%, black),
-    color-mix(in srgb, var(--zen-primary-color) 50%, black),
-    color-mix(in srgb, var(--zen-primary-color) 15%, black)
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 5%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 5%, black)),
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 30%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 30%, black)),
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 75%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 75%, black)),
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 100%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 100%, black)),
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 50%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 50%, black)),
+    light-dark(color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 15%, white), color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 15%, black))
   );
   background-size: 200% 200%;
   border-radius: inherit;
@@ -299,10 +299,17 @@ tab-group[split-view-group="true"] .tab-group-container {
 
 :not(.zen-essentials-container) > tab[selected] .tab-background,
 :not(.zen-essentials-container) > tab[visuallyselected] .tab-background {
-  background: color-mix(
-    in srgb,
-    var(--tab-color, var(--zen-primary-color)) 15%,
-    transparent
+  background: light-dark(
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    ),
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    )
   ) !important;
   box-shadow:
     inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
@@ -327,10 +334,17 @@ tab-group[split-view-group="true"] .tab-group-container {
 
 :not(.zen-essentials-container) > tab[selected]:hover .tab-background,
 :not(.zen-essentials-container) > tab[visuallyselected]:hover .tab-background {
-  background: color-mix(
-    in srgb,
-    var(--tab-color, var(--zen-primary-color)) 15%,
-    transparent
+  background: light-dark(
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    ),
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    )
   ) !important;
   box-shadow:
     inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
@@ -358,10 +372,17 @@ tab-group[split-view-group="true"] .tab-group-container {
 
 .zen-essentials-container > tab[selected] .tab-background,
 .zen-essentials-container > tab[visuallyselected] .tab-background {
-  background: color-mix(
-    in srgb,
-    var(--tab-color, var(--zen-primary-color)) 15%,
-    transparent
+  background: light-dark(
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    ),
+    color-mix(
+      in srgb,
+      var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
+      transparent
+    )
   ) !important;
   box-shadow:
     inset 6px 6px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
@@ -377,7 +398,7 @@ tab-group[split-view-group="true"] .tab-group-container {
 .zen-essentials-container > tab[visuallyselected]:hover .tab-background {
   background: color-mix(
     in srgb,
-    var(--tab-color, var(--zen-primary-color)) 15%,
+    var(--tab-color, var(--zen-colors-primary, var(--zen-primary-color))) 15%,
     transparent
   ) !important;
   box-shadow:

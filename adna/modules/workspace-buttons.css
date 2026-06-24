@@ -11,10 +11,9 @@
   width: auto !important;
   display: flex !important;
   align-items: center !important;
-  background: color-mix(
-    in srgb,
-    var(--zen-primary-color) 8%,
-    var(--toolbar-bgcolor, #38384d)
+  background: light-dark(
+    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, white),
+    color-mix(in srgb, var(--zen-colors-primary, var(--zen-primary-color)) 8%, black)
   ) !important;
   transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 
