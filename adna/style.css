@@ -13,12 +13,12 @@
 
   /* === Surface tints (derived from --adna-base) === */
   --adna-bg: light-dark(
-    color-mix(in srgb, var(--adna-base) 8%, white),
-    color-mix(in srgb, var(--adna-base) 8%, black)
+    color-mix(in srgb, var(--adna-base) 25%, white),
+    color-mix(in srgb, var(--adna-base) 25%, black)
   );
   --adna-bg-hover: light-dark(
-    color-mix(in srgb, var(--adna-base) 12%, white),
-    color-mix(in srgb, var(--adna-base) 12%, black)
+    color-mix(in srgb, var(--adna-base) 35%, white),
+    color-mix(in srgb, var(--adna-base) 35%, black)
   );
   --adna-bg-splitter: light-dark(
     color-mix(in srgb, var(--adna-base) 1%, transparent),
