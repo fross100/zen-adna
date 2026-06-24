@@ -3,7 +3,7 @@
      Priority: Omarchy accent (--base08) > Omarchy background > Zen editor.
      The Omarchy hook sets --zen-colors-primary to --base00 (background),
      so we pull --base08 first to get the actual accent colour. */
-  --adna-accent: var(--base08, var(--zen-colors-primary, var(--zen-primary-color)));
+  --adna-accent: var(--base08, var(--zen-colors-primary, var(--zen-primary-color, #808080)));
 
   /* === Surface tints === */
   --adna-bg: light-dark(
