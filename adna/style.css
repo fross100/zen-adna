@@ -7,9 +7,9 @@
   --adna-base: var(--base08, var(--zen-primary-color, #808080));
 
   /* === Accent source ===
-     Same source as the base so tints and highlights share the
-     same hue. */
-  --adna-accent: var(--adna-base);
+     --base05 is the base16 foreground (text) colour — a bright,
+     high-contrast hue for tab highlights and gradients. */
+  --adna-accent: var(--base05, var(--adna-base));
 
   /* === Surface tints (derived from --adna-base) === */
   --adna-bg: light-dark(
