@@ -9,15 +9,21 @@
 }
 
 /* Strip solid backgrounds from the window chain so backdrop-filter
-   on the sidebar can blur the desktop below. */
+   on the sidebar can blur the desktop below.
+   #zen-main-app-wrapper gets a subtle gradient — the backdrop-filter
+   on the sidebar blurs it into a visible frosted-glass effect even
+   on Linux where the OS compositor is not available for blur. */
 #main-window,
-#zen-main-app-wrapper,
 #browser,
 #appcontent,
 #tabbrowser-tabbox,
 #tabbrowser-tabpanels,
 #zen-appcontent-wrapper {
   background: transparent !important;
+}
+
+#zen-main-app-wrapper {
+  background: var(--adna-glass-bg) !important;
 }
 
 #navigator-toolbox {

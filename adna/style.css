@@ -59,10 +59,21 @@
   );
 
   /* === Zen browser chrome ===
-     Make the main browser area transparent so backdrop-filter
-     on the sidebar can blur the desktop wallpaper behind it.
-     Requires browser.tabs.allow_transparent_browser = true. */
+     Transparent browser background so the glass gradient behind
+     the sidebar shows through.  Requires
+     browser.tabs.allow_transparent_browser = true. */
   --zen-main-browser-background: transparent !important;
+
+  /* === Glass backdrop gradient ===
+     backdrop-filter cannot see the desktop wallpaper on Linux,
+     so we put a visible gradient behind the sidebar for it to
+     blur — creating a reliable frosted-glass effect everywhere. */
+  --adna-glass-bg: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--adna-accent) 8%, transparent) 0%,
+    color-mix(in srgb, var(--adna-base) 4%, transparent) 40%,
+    transparent 70%
+  );
 
   /* === Legacy helper vars (keep for compatibility) === */
   --livs-bg: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));

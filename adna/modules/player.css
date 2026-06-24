@@ -2,20 +2,24 @@
 
 #zen-media-controls-toolbar {
   border: none !important;
-  box-shadow: none !important;
+  background: transparent !important;
 
   toolbaritem {
     padding: 7px !important;
     border-radius: 22px !important;
     background: var(--adna-bg) !important;
-    box-shadow: none !important;
     backdrop-filter: blur(12px) !important;
+    box-shadow:
+      4px 4px 8px var(--adna-shadow-dark),
+      -4px -4px 8px var(--adna-shadow-light) !important;
     margin-bottom: 3px !important;
     transition: all 0.3s ease-out !important;
-    border: solid 1px transparent !important;
+
     &:hover {
       background: var(--adna-bg-hover) !important;
-      border: solid 1px var(--adna-bg) !important;
+      box-shadow:
+        inset 6px 6px 12px var(--adna-shadow-in-dark),
+        inset -6px -6px 12px var(--adna-shadow-in-light) !important;
     }
   }
 
