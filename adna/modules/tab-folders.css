@@ -9,7 +9,7 @@ zen-folder:not([collapsed], [has-active]) {
   border: none !important;
   padding-top: 4px !important;
   margin-bottom: 4px !important;
-  margin-inline: 36px 10px !important;
+  margin-inline: 22px 0px !important;
   border-radius: 0 0 16px 16px !important;
 }
 
@@ -42,7 +42,8 @@ zen-folder {
   text-align: center !important;
 }
 
-.tab-group-label-container:not(pinned):not(.zen-drop-target) .tab-group-label::after {
+.tab-group-label-container:not(pinned):not(.zen-drop-target)
+  .tab-group-label::after {
   content: "" !important;
   position: absolute !important;
   top: 50% !important;

@@ -2,7 +2,7 @@
   "id": "adna",
   "name": "Adna",
   "description": "A custom Zen Browser theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"

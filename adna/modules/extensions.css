@@ -10,7 +10,29 @@
   background: var(--adna-bg) !important;
   border-radius: 999px !important;
   box-shadow:
-    inset 3px 3px 6px color-mix(in srgb, var(--adna-shadow-in-dark) 20%, transparent),
-    inset -3px -3px 6px color-mix(in srgb, var(--adna-shadow-in-light) 20%, transparent) !important;
+    2px 2px 2px var(--adna-shadow-dark),
+    -2px -2px 2px var(--adna-shadow-light) !important;
+  transition:
+    background 0.3s ease-out,
+    box-shadow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   border: none !important;
+}
+
+.unified-extensions-item:hover,
+.unified-extensions-item-action-button:hover {
+  background: color-mix(in srgb, var(--adna-base) 90%, white) !important;
+  transform: scale(1.02) !important;
+  transition:
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    transform 0.3s ease-out !important;
+}
+
+.unified-extensions-item:active,
+.unified-extensions-item-action-button:active {
+  box-shadow:
+    inset 2px 2px 2px var(--adna-shadow-in-dark),
+    inset -2px -2px 2px var(--adna-shadow-in-light) !important;
+  transform: scale(0.97) !important;
 }
