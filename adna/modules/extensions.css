@@ -10,8 +10,8 @@
   background: var(--adna-bg) !important;
   border-radius: 999px !important;
   box-shadow:
-    2px 2px 2px var(--adna-shadow-dark),
-    -2px -2px 2px var(--adna-shadow-light) !important;
+    1px 1px 4px color-mix(in srgb, var(--adna-shadow-dark) 50%, transparent),
+    -1px -1px 4px color-mix(in srgb, var(--adna-shadow-light) 50%, transparent) !important;
   transition:
     background 0.3s ease-out,
     box-shadow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -32,7 +32,7 @@
 .unified-extensions-item:active,
 .unified-extensions-item-action-button:active {
   box-shadow:
-    inset 2px 2px 2px var(--adna-shadow-in-dark),
-    inset -2px -2px 2px var(--adna-shadow-in-light) !important;
+    inset 1px 1px 4px color-mix(in srgb, var(--adna-shadow-in-dark) 50%, transparent),
+    inset -1px -1px 4px color-mix(in srgb, var(--adna-shadow-in-light) 50%, transparent) !important;
   transform: scale(0.97) !important;
 }
