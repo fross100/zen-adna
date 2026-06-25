@@ -26,9 +26,6 @@
   animation: slideBounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
-/* Bottom row items expand to fill automatically via flex-grow */
-
-/* When selected, add glow */
 .zen-essentials-container > tab[selected] {
   background-color: transparent !important;
 }
@@ -41,15 +38,6 @@
 
 .tab-stack > vbox {
   margin: 0 !important;
-}
-
-.zen-essentials-container tab .tab-stack .tab-background:is([selected]):before {
-  background: var(--adna-gradient) !important;
-  background-size: 200% 200% !important;
-  animation: tab-hover-gradient 3.5s linear infinite !important;
-  margin: 0 !important;
-  border-radius: inherit !important;
-  filter: blur(2px) !important;
 }
 
 .zen-essentials-container tab .tab-stack .tab-background:after {
@@ -89,6 +77,73 @@
 
 tab[pending="true"] > .tab-stack > .tab-content {
   opacity: 0.5 !important;
+}
+
+/*------ESSENTIAL TAB BACKGROUND------*/
+
+.zen-essentials-container > tab .tab-background {
+  background: var(--adna-bg) !important;
+  border-radius: 999px !important;
+  box-shadow:
+    4px 4px 4px var(--adna-shadow-dark),
+    -4px -4px 4px var(--adna-shadow-light) !important;
+  transition:
+    background 0.3s ease-out,
+    box-shadow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.zen-essentials-container > tab:not([selected]):not([visuallyselected]):hover .tab-background {
+  background: color-mix(in srgb, var(--adna-base) 90%, white) !important;
+  box-shadow:
+    4px 4px 4px var(--adna-shadow-dark),
+    -4px -4px 4px var(--adna-shadow-light) !important;
+  transform: scale(1.02) !important;
+  transition:
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    transform 0.3s ease-out !important;
+}
+
+.zen-essentials-container > tab:not([selected]):not([visuallyselected]):hover .tab-background::before {
+  opacity: 0 !important;
+  animation: none !important;
+  transition: none !important;
+  display: none !important;
+}
+
+.zen-essentials-container > tab[selected] .tab-background,
+.zen-essentials-container > tab[visuallyselected] .tab-background {
+  background: var(--adna-tab-selected) !important;
+  box-shadow:
+    inset 4px 4px 4px var(--adna-shadow-in-dark),
+    inset -4px -4px 4px var(--adna-shadow-in-light) !important;
+  transform: scale(1.02) !important;
+}
+
+.zen-essentials-container > tab[selected]:hover .tab-background,
+.zen-essentials-container > tab[visuallyselected]:hover .tab-background {
+  background: var(--adna-tab-selected) !important;
+  box-shadow:
+    inset 4px 4px 4px var(--adna-shadow-in-dark),
+    inset -4px -4px 4px var(--adna-shadow-in-light) !important;
+  transform: scale(1.02) !important;
+}
+
+.zen-essentials-container > tab:active .tab-background {
+  box-shadow:
+    inset 4px 4px 4px var(--adna-shadow-in-dark),
+    inset -4px -4px 4px var(--adna-shadow-in-light) !important;
+  transform: scale(0.97) !important;
+}
+
+.zen-essentials-container tab .tab-stack .tab-background:is([selected]):before {
+  background: var(--adna-gradient) !important;
+  background-size: 200% 200% !important;
+  animation: tab-hover-gradient 3.5s linear infinite !important;
+  margin: 0 !important;
+  border-radius: inherit !important;
+  filter: blur(2px) !important;
 }
 
 /*------PINNED EXTENSIONS------*/

@@ -39,6 +39,13 @@
   background: var(--adna-bg) !important;
 }
 
+#zen-sidebar-top-buttons toolbarbutton,
+#zen-sidebar-foot-buttons toolbarbutton,
+#nav-bar toolbarbutton,
+#TabsToolbar toolbarbutton {
+  fill: var(--base05) !important;
+}
+
 /* Inner sidebar elements: transparent so the glass on
    #navigator-toolbox shows through without stacking. */
 #TabsToolbar,

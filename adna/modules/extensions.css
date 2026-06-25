@@ -1,0 +1,16 @@
+/*------Unified Extensions Panel------*/
+
+.unified-extensions-item,
+.unified-extensions-item-row-wrapper,
+.unified-extensions-item-view,
+.unified-extensions-list,
+#unified-extensions-view,
+.unified-extensions-item-message,
+.unified-extensions-item-action-button {
+  background: var(--adna-bg) !important;
+  border-radius: 999px !important;
+  box-shadow:
+    inset 3px 3px 6px color-mix(in srgb, var(--adna-shadow-in-dark) 20%, transparent),
+    inset -3px -3px 6px color-mix(in srgb, var(--adna-shadow-in-light) 20%, transparent) !important;
+  border: none !important;
+}

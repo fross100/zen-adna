@@ -1,15 +1,15 @@
 :root {
   /* === Base background source ===
-     --base08 is the Omarchy highlight colour; --zen-primary-color
+     --base00 is the Omarchy background colour; --zen-primary-color
      is from the Zen theme editor.  When neither is set we fall
      back to a neutral #808080 so the theme always has a colour
      to work with. */
-  --adna-base: var(--base08, var(--zen-primary-color, #808080));
+  --adna-base: var(--base00, var(--zen-primary-color, #808080));
 
   /* === Accent source ===
-     --base05 is the base16 foreground (text) colour — a bright,
-     high-contrast hue for tab highlights and gradients. */
-  --adna-accent: var(--base05, var(--adna-base));
+     --base0D is the Omarchy accent colour (normal_blue) — used for
+     tab highlights, gradients, and interactive elements. */
+  --adna-accent: var(--base0D, var(--adna-base));
 
   /* === Surface tints (semi-transparent, shows browser chrome behind) === */
   --adna-bg: color-mix(in srgb, var(--adna-base) 60%, transparent);
@@ -31,16 +31,16 @@
   /* === Emboss shadow colours ===
      Dark side = black shadow, Light side = white / tinted highlight. */
   --adna-shadow-dark: light-dark(
-    color-mix(in srgb, var(--base00, black) 90%, transparent),
-    color-mix(in srgb, var(--base00, black) 100%, transparent)
+    color-mix(in srgb, var(--base05, black) 20%, transparent),
+    color-mix(in srgb, var(--base05, black) 30%, transparent)
   );
   --adna-shadow-light: light-dark(
     rgba(255, 255, 255, 0.4),
     color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
   );
   --adna-shadow-in-dark: light-dark(
-    color-mix(in srgb, var(--base00, black) 40%, transparent),
-    color-mix(in srgb, var(--base00, black) 90%, transparent)
+    color-mix(in srgb, var(--base05, black) 15%, transparent),
+    color-mix(in srgb, var(--base05, black) 30%, transparent)
   );
   --adna-shadow-in-light: light-dark(
     rgba(255, 255, 255, 0.5),

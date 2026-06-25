@@ -1,8 +1,19 @@
+#urlbar,
+.urlbar,
+.urlbar-container,
+[popover] {
+  background: transparent !important;
+}
+
 /*------SEARCHBAR------*/
 
 #zen-copy-url-button {
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+#identity-box.verifiedDomain {
+  fill: var(--base05) !important;
 }
 
 #identity-box,
@@ -21,26 +32,30 @@
   height: 45px !important;
 }
 
-.urlbar-container {
-  border-radius: 22px !important;
-}
-
 ::placeholder {
   text-align: left !important;
 }
 
+/* URL bar result rows - pill shape on hover/click */
 .urlbar-background {
-  border-radius: 22px !important;
-  width: 101% !important;
-  margin-left: -0.5% !important;
+  border-radius: 999px !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  background: var(--adna-bg) !important;
+  color: transparent !important;
+  box-shadow:
+    inset 3px 3px 6px
+      color-mix(in srgb, var(--adna-shadow-in-dark) 60%, transparent),
+    inset -3px -3px 6px
+      color-mix(in srgb, var(--adna-shadow-in-light) 70%, transparent) !important;
 }
 
-/* URL bar result rows - pill shape on hover/click */
 .urlbarView-row {
   border-radius: 999px !important;
   margin: 2px 8px !important;
   padding: 0 !important;
 }
+
 .urlbarView-body-inner {
   border: none !important;
 }
@@ -90,9 +105,13 @@
   margin-top: 2px !important;
 }
 
+#nav-bar {
+  background: none !important ;
+}
+
 #urlbar[zen-floating-urlbar="true"] .urlbar-background {
   box-shadow: 0 8px 32px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)) !important;
-  background: light-dark(white, black) !important;
+  background: var(--adna-bg) !important;
   border-radius: 32px !important;
 }
 

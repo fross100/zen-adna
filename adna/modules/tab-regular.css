@@ -1,0 +1,41 @@
+/*------REGULAR TABS------*/
+
+:not(.zen-essentials-container) > tab:not([pinned]) {
+  margin-block: 2px !important;
+}
+
+:not(.zen-essentials-container) > tab {
+  overflow: hidden;
+  border-radius: 999px !important;
+}
+
+:not(.zen-essentials-container) > tab:hover .tab-background {
+  background: var(--zen-toolbar-bg) !important;
+  box-shadow:
+    4px 4px 4px var(--adna-shadow-dark),
+    -4px -4px 4px var(--adna-shadow-light) !important;
+}
+
+:not(.zen-essentials-container) > tab[selected] .tab-background,
+:not(.zen-essentials-container) > tab[visuallyselected] .tab-background {
+  background: var(--adna-tab-selected) !important;
+  box-shadow:
+    inset 4px 4px 4px var(--adna-shadow-in-dark),
+    inset -4px -4px 4px var(--adna-shadow-in-light) !important;
+  transform: scale(1.02) !important;
+}
+
+:not(.zen-essentials-container) > tab[selected] .tab-background::before,
+:not(.zen-essentials-container) > tab[visuallyselected] .tab-background::before {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+:not(.zen-essentials-container) > tab[selected]:hover .tab-background,
+:not(.zen-essentials-container) > tab[visuallyselected]:hover .tab-background {
+  background: var(--adna-tab-selected) !important;
+  box-shadow:
+    inset 4px 4px 4px var(--adna-shadow-in-dark),
+    inset -4px -4px 4px var(--adna-shadow-in-light) !important;
+  transform: scale(1.02) !important;
+}
