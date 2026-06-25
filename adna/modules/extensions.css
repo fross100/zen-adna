@@ -21,7 +21,7 @@
 
 .unified-extensions-item:hover,
 .unified-extensions-item-action-button:hover {
-  background: color-mix(in srgb, var(--adna-base) 90%, white) !important;
+  background: color-mix(in srgb, var(--adna-base) !important;
   transform: scale(1.02) !important;
   transition:
     background 0.3s ease-out,
