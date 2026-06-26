@@ -32,19 +32,19 @@
      Dark side = black shadow, Light side = white / tinted highlight. */
   --adna-shadow-dark: light-dark(
     color-mix(in srgb, var(--base05, black) 20%, transparent),
-    color-mix(in srgb, var(--base05, black) 30%, transparent)
+    color-mix(in srgb, var(--base00) 40%, black)
   );
   --adna-shadow-light: light-dark(
     rgba(255, 255, 255, 0.4),
-    color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
+    color-mix(in srgb, var(--base0D) 12%, transparent)
   );
   --adna-shadow-in-dark: light-dark(
     color-mix(in srgb, var(--base05, black) 15%, transparent),
-    color-mix(in srgb, var(--base05, black) 30%, transparent)
+    color-mix(in srgb, var(--base00) 25%, black)
   );
   --adna-shadow-in-light: light-dark(
     rgba(255, 255, 255, 0.5),
-    color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
+    color-mix(in srgb, var(--base0D) 12%, transparent)
   );
 
   /* === Hover gradient (animated, derived from --adna-accent) === */

@@ -1,26 +1,85 @@
 #urlbar,
 .urlbar,
-.urlbar-container,
-[popover] {
+.urlbar-container {
   background: transparent !important;
 }
 
-/*------SEARCHBAR------*/
+/*------URLBAR BUTTONS------*/
+
+#zen-copy-url-button,
+#identity-box {
+  border-radius: 22px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+  margin-top: 3px !important;
+  visibility: visible !important;
+  opacity: 0.8 !important;
+  transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+#zen-site-data-icon-button {
+  border-radius: 22px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 0.8 !important;
+  transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+#page-action-buttons {
+  margin-right: 4px !important;
+  margin-top: 3px !important;
+}
+
+#page-action-buttons .urlbar-page-action {
+  border-radius: 22px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+  opacity: 0.8 !important;
+  transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
 
 #zen-copy-url-button {
-  visibility: visible !important;
   opacity: 1 !important;
 }
 
+#identity-box.identity-box-button,
 #identity-box.verifiedDomain {
   fill: var(--base05) !important;
 }
 
-#identity-box,
-#zen-site-data-icon-button {
-  height: 100% !important;
-  visibility: visible !important;
-  opacity: 0.8 !important;
+#zen-copy-url-button:hover,
+#identity-box:hover,
+#zen-site-data-icon-button:hover,
+#page-action-buttons .urlbar-page-action:hover {
+  opacity: 1 !important;
+  box-shadow:
+    1px 1px 3px var(--adna-shadow-dark),
+    -1px -1px 3px var(--adna-shadow-light) !important;
+}
+
+#zen-copy-url-button:active,
+#identity-box:active,
+#zen-site-data-icon-button:active,
+#page-action-buttons .urlbar-page-action:active {
+  box-shadow:
+    inset 2px 2px 4px var(--adna-shadow-in-dark),
+    inset -2px -2px 4px var(--adna-shadow-in-light) !important;
 }
 
 #main-window[zen-single-toolbar="true"] #identity-box,
@@ -36,13 +95,16 @@
   text-align: left !important;
 }
 
-/* URL bar result rows - pill shape on hover/click */
+/* URL bar result rows  */
 .urlbar-background {
-  border-radius: 999px !important;
+  border-radius: 22px !important;
   width: 100% !important;
   margin-left: 0 !important;
-  background: var(--adna-bg) !important;
+  background: var(--adna-base) !important;
   color: transparent !important;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   box-shadow:
     inset 3px 3px 6px
       color-mix(in srgb, var(--adna-shadow-in-dark) 60%, transparent),
@@ -50,8 +112,42 @@
       color-mix(in srgb, var(--adna-shadow-in-light) 70%, transparent) !important;
 }
 
+#urlbar[open] .urlbar-background {
+  transform-origin: left center;
+  animation: urlbar-expand 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+@keyframes urlbar-expand {
+  0% {
+    transform: scaleX(0.15);
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.urlbarView {
+  animation: urlbar-results-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+@keyframes urlbar-results-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .urlbarView-row {
-  border-radius: 999px !important;
+  border-radius: 22px !important;
   margin: 2px 8px !important;
   padding: 0 !important;
 }
@@ -111,12 +207,12 @@
 
 #urlbar[zen-floating-urlbar="true"] .urlbar-background {
   box-shadow: 0 8px 32px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)) !important;
-  background: var(--adna-bg) !important;
+  background: var(--adna-base) !important;
   border-radius: 32px !important;
 }
 
 #urlbar[zen-floating-urlbar="true"] .urlbarView {
-  background: light-dark(white, black) !important;
+  background: var(--adna-base) !important;
   border-radius: 22px !important;
   margin-bottom: 12px !important;
   border: 1px solid light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1)) !important;

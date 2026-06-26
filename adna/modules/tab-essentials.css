@@ -7,8 +7,8 @@
 
 .zen-essentials-container {
   padding: 6px !important;
-  column-gap: 4px !important;
-  row-gap: 4px !important;
+  column-gap: 8px !important;
+  row-gap: 8px !important;
   min-width: 0 !important;
   width: 100% !important;
   display: flex !important;
@@ -16,7 +16,7 @@
 }
 
 .zen-essentials-container > tab {
-  flex: 1 1 calc((100% - 8px) / 3) !important;
+  flex: 1 1 calc((100% - 16px) / 3) !important;
   min-width: 0 !important;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   will-change: flex, width, transform !important;
@@ -94,7 +94,7 @@ tab[pending="true"] > .tab-stack > .tab-content {
 }
 
 .zen-essentials-container > tab:not([selected]):not([visuallyselected]):hover .tab-background {
-  background: color-mix(in srgb, var(--adna-base) 90%, white) !important;
+  background: color-mix(in srgb, var(--adna-accent) 5%, transparent) !important;
   box-shadow:
     4px 4px 4px var(--adna-shadow-dark),
     -4px -4px 4px var(--adna-shadow-light) !important;
