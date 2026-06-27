@@ -32,6 +32,7 @@
   backdrop-filter: blur(20px) saturate(180%) !important;
   -moz-default-appearance: none !important;
   appearance: none !important;
+  box-shadow: 4px 0 4px var(--adna-shadow-dark) !important;
 }
 
 #nav-bar,
@@ -63,13 +64,14 @@
 
 #zen-sidebar-splitter,
 zen-sidebar-splitter {
-  width: 1px !important;
-  min-width: 1px !important;
+  width: 4px !important;
+  min-width: 4px !important;
   padding: 0 4px !important;
   margin-inline: -4px !important;
   border: none !important;
-  background: var(--adna-bg-splitter) !important;
-  background-clip: content-box !important;
+  background: transparent !important;
+  opacity: 0 !important;
+  box-shadow: none !important;
 }
 
 #statuspanel {
@@ -105,6 +107,11 @@ zen-sidebar-splitter {
 
 .titlebar-button:hover::before {
   opacity: 0.5 !important;
+}
+
+.zen-workspace-tabs-section,
+.zen-current-workspace-indicator {
+  justify-content: flex-start !important;
 }
 
 .zen-workspaces-actions {
@@ -145,17 +152,17 @@ scrollbox {
 }
 
 .zen-current-workspace-indicator-name {
-  letter-spacing: 9px !important;
   font-weight: 100 !important;
-  text-align: center !important;
-  transition: all 0.75s ease !important;
+  text-align: left !important;
+  opacity: 0.4 !important;
+  transition: opacity 0.4s ease !important;
 }
 
 zen-workspace[active="true"] .zen-current-workspace-indicator-name {
-  letter-spacing: 0 !important;
   font-weight: 600 !important;
   font-size: 14px !important;
-  text-align: center !important;
+  text-align: left !important;
+  opacity: 1 !important;
 }
 
 /*------TOOLBAR BUTTONS------*/
@@ -190,6 +197,26 @@ toolbarbutton:not(#tabs-newtab-button):active {
 
 toolbarbutton:not(#tabs-newtab-button):hover > * {
   background-color: transparent !important;
+}
+
+#tabs-newtab-button {
+  transition: box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+#tabs-newtab-button:hover {
+  background-color: transparent !important;
+  border-radius: 999px !important;
+  box-shadow:
+    3px 3px 6px var(--adna-shadow-dark),
+    -3px -3px 6px var(--adna-shadow-light) !important;
+  transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+#tabs-newtab-button:active {
+  box-shadow:
+    inset 3px 3px 6px var(--adna-shadow-in-dark),
+    inset -3px -3px 6px var(--adna-shadow-in-light) !important;
+  transition: box-shadow 0.08s ease-out !important;
 }
 
 /*------COMPACT MODE------*/

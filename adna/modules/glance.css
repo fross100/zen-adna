@@ -1,0 +1,50 @@
+/*------GLANCE SIDEBAR------*/
+
+.zen-glance-overlay .browserStack {
+  border-radius: 22px 0 22px 22px !important;
+}
+
+.zen-glance-overlay .browserContainer {
+  height: 90% !important;
+  border-radius: 22px 0 0 22px !important;
+}
+
+.zen-glance-sidebar-container {
+  background: var(--adna-base) !important;
+  border-radius: 0 22px 22px 0 !important;
+  padding: 8px !important;
+  margin-top: -16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.zen-glance-sidebar-close,
+.zen-glance-sidebar-open,
+.zen-glance-sidebar-split {
+  border-radius: 999px !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--adna-accent) !important;
+  fill: var(--adna-accent) !important;
+  box-shadow:
+    1px 1px 3px var(--adna-shadow-dark),
+    -1px -1px 3px var(--adna-shadow-light) !important;
+  transition: box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.zen-glance-sidebar-close:hover,
+.zen-glance-sidebar-open:hover,
+.zen-glance-sidebar-split:hover {
+  box-shadow:
+    2px 2px 4px var(--adna-shadow-dark),
+    -2px -2px 4px var(--adna-shadow-light) !important;
+}
+
+.zen-glance-sidebar-close:active,
+.zen-glance-sidebar-open:active,
+.zen-glance-sidebar-split:active {
+  box-shadow:
+    inset 2px 2px 4px var(--adna-shadow-in-dark),
+    inset -2px -2px 4px var(--adna-shadow-in-light) !important;
+}
